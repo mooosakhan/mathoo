@@ -53,12 +53,12 @@ export function Hero() {
 
         {/* CTA Buttons */}
         <div className="flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4">
-          <Button className="rounded-full bg-gray-900 px-6 py-3 text-sm font-medium text-white shadow-lg transition-all hover:bg-gray-800 hover:shadow-xl sm:px-8 sm:text-base">
+          <Button className="rounded-3xl border-4 border-gray-200 bg-gray-900 px-3 py-6 text-sm font-medium text-white shadow-lg transition-all hover:bg-gray-800 hover:shadow-xl  sm:text-base">
             Lets Collaborate
           </Button>
           <Button
             variant="outline"
-            className="rounded-full border-2 border-gray-300 bg-white px-6 py-3 text-sm font-medium text-gray-700 shadow-sm transition-all hover:border-gray-400 hover:shadow-md sm:px-8 sm:text-base"
+            className="rounded-3xl border-2 border-gray-300 bg-white px-3 py-6 text-sm font-medium text-gray-700 shadow-sm transition-all hover:border-gray-400 hover:shadow-md  sm:text-base"
           >
             View Selected Work
           </Button>

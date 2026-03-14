@@ -61,9 +61,9 @@ export function Features() {
   ];
 
   return (
-    <section className="bg-white py-16 sm:py-24">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 gap-12 sm:grid-cols-3">
+    <section className="bg-white max-w-7xl py-8 sm:py-14">
+      <div className="mx-auto  px-4 sm:px-6 lg:px-8 p-2">
+        <div className="grid grid-cols-1 gap-12 sm:grid-cols-3 border-8 bg-white border-gray-100 rounded-lg p-2 ">
           {features.map((feature, index) => (
             <div
               key={index}
