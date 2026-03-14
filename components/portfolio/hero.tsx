@@ -1,11 +1,11 @@
-'use client'
+"use client";
 
-import Image from 'next/image'
-import { Button } from '@/components/ui/button'
+import Image from "next/image";
+import { Button } from "@/components/ui/button";
 
 export function Hero() {
   return (
-    <section className="relative w-full bg-white px-4 py-16 sm:px-6 sm:py-24 lg:px-8 lg:py-32">
+    <section className="relative w-full bg-white px-2 py-8 sm:px-3 sm:py-10 lg:px-4 lg:py-12">
       <div className="mx-auto max-w-5xl">
         {/* Avatar and Name Label - Repositioned */}
         <div className="mb-8 flex flex-col items-center gap-3 sm:mb-12">
@@ -18,17 +18,11 @@ export function Hero() {
               priority
             />
           </div>
-          
-          <div className="rounded-full bg-white px-3 py-1.5 shadow-sm sm:px-4 sm:py-2">
-            <p className="whitespace-nowrap text-xs font-medium text-gray-900 sm:text-sm">
-              Muneeb ur Rehman
-            </p>
-          </div>
         </div>
 
         {/* Main Headline with Embedded Mockup */}
         <div className="mb-6 text-center sm:mb-8">
-          <h1 className="text-balance text-4xl font-bold leading-tight text-gray-900 sm:text-5xl lg:text-6xl lg:leading-tight">
+          <h1 className="text-balance text-3xl font-bold leading-tight text-gray-900 sm:text-4xl lg:text-5xl lg:leading-tight">
             <span>Designing product</span>
             <span className="relative mx-2 inline-block">
               <div className="absolute inset-0 -z-10 rounded-lg bg-gray-100" />
@@ -51,7 +45,9 @@ export function Hero() {
         {/* Description */}
         <div className="mb-8 text-center sm:mb-10">
           <p className="mx-auto max-w-2xl text-base text-gray-600 sm:text-lg">
-            I help startups and product teams simplify workflows, improve usability, and craft interfaces that feel intuitive, scalable, and visually refined.
+            I help startups and product teams simplify workflows, improve
+            usability, and craft interfaces that feel intuitive, scalable, and
+            visually refined.
           </p>
         </div>
 
@@ -69,5 +65,5 @@ export function Hero() {
         </div>
       </div>
     </section>
-  )
+  );
 }
