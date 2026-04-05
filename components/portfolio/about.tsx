@@ -1,41 +1,57 @@
 "use client";
 
+import { motion } from "framer-motion";
+import { TitleChip } from "../reusable/titleChip";
+import { fadeInUp, revealContainer, revealItem } from "@/lib/motion-variants";
+
 export function About() {
   return (
-    <section className="bg-white py-4  sm:py-8">
+    <motion.section 
+      className="py-4 sm:py-8"
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      viewport={{ once: true, margin: "-100px" }}
+      transition={{ duration: 0.6 }}
+    >
       <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-        <div className="mb-8 text-center">
-          <p className="text-sm font-medium text-gray-600">About Me</p>
-        </div>
+        <motion.div 
+          className="mb-8 text-center"
+          variants={fadeInUp}
+          initial="initial"
+          whileInView="animate"
+          viewport={{ once: true }}
+        >
+          <TitleChip text="About Me" />
+        </motion.div>
 
-        <div className="text-center">
-          <p className="text-lg leading-relaxed text-gray-700 sm:text-xl">
-            <span className="text-gray-500">I design </span>
-            <span className="font-semibold text-gray-900">
-              user focused experiences
-            </span>
-            <span className="text-gray-500"> that </span>
-            <span className="font-semibold text-gray-900">
-              solve usability challenges
-            </span>
-            <span className="text-gray-500"> and </span>
-            <span className="font-semibold text-gray-900">
-              improve workflows
-            </span>
-            <span className="text-gray-500"> through thoughtful </span>
-            <span className="font-semibold text-gray-900">problem solving</span>
-            <span className="text-gray-500"> and </span>
-            <span className="font-semibold text-gray-900">UI decisions.</span>
-            <span className="text-gray-500">
+        <motion.div 
+          className="text-center"
+          variants={revealContainer}
+          initial="initial"
+          whileInView="animate"
+          viewport={{ once: true, margin: "-50px" }}
+        >
+          <p className="text-lg leading-relaxed text-[#7b7c7c] sm:text-xl">
+            <motion.span variants={revealItem} className="inline">I design </motion.span>
+            <motion.span variants={revealItem} className="inline text-[#282828]">user focused experiences</motion.span>
+            <motion.span variants={revealItem} className="inline"> that </motion.span>
+            <motion.span variants={revealItem} className="inline text-[#282828]">solve usability challenges</motion.span>
+            <motion.span variants={revealItem} className="inline"> and </motion.span>
+            <motion.span variants={revealItem} className="inline text-[#282828]">improve workflows</motion.span>
+            <motion.span variants={revealItem} className="inline"> through thoughtful </motion.span>
+            <motion.span variants={revealItem} className="inline text-[#282828]">problem solving</motion.span>
+            <motion.span variants={revealItem} className="inline"> and </motion.span>
+            <motion.span variants={revealItem} className="inline text-[#282828]">UI decisions.</motion.span>
+            <motion.span variants={revealItem} className="inline">
               {" "}
               Outside of design I enjoy late night creative sessions and{" "}
-            </span>
-            <span className="font-semibold text-gray-900">turning ideas</span>
-            <span className="text-gray-500"> into meaningful </span>
-            <span className="font-semibold text-gray-900">products.</span>
+            </motion.span>
+            <motion.span variants={revealItem} className="inline text-[#282828]">turning ideas</motion.span>
+            <motion.span variants={revealItem} className="inline"> into meaningful </motion.span>
+            <motion.span variants={revealItem} className="inline text-[#282828]">products.</motion.span>
           </p>
-        </div>
+        </motion.div>
       </div>
-    </section>
+    </motion.section>
   );
 }
