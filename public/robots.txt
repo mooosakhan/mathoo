@@ -1,0 +1,26 @@
+# Robots.txt for SEO
+# Allows search engine crawlers to index the site
+
+User-agent: *
+Allow: /
+Disallow: /_next/
+Disallow: /api/
+Disallow: /.next/
+
+# Specific rules for Google
+User-agent: Googlebot
+Allow: /
+
+# Specific rules for Bing
+User-agent: Bingbot
+Allow: /
+
+# Specific rules for Other bots
+User-agent: *
+Allow: /
+
+# Crawl delay (in seconds)
+Crawl-delay: 1
+
+# Sitemap location
+Sitemap: https://muneeb.design/sitemap.xml

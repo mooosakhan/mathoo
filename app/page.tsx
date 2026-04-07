@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { Header } from "@/components/portfolio/header";
 import { Hero } from "@/components/portfolio/hero";
 import { Features } from "@/components/portfolio/features";
@@ -7,6 +8,12 @@ import { CaseStudies } from "@/components/portfolio/case-studies";
 import { Services } from "@/components/portfolio/services";
 import { Testimonials } from "@/components/portfolio/testimonials";
 import { Footer } from "@/components/portfolio/footer";
+
+export const metadata: Metadata = {
+  title: "Muneeb Ur Rehman - Product Designer | UI/UX Expert",
+  description:
+    "Award-winning UI/UX designer creating beautiful, user-centered product experiences. Specializing in design systems, web design, and digital transformation.",
+};
 
 export default function Home() {
   return (
@@ -35,3 +42,4 @@ export default function Home() {
     </main>
   );
 }
+
