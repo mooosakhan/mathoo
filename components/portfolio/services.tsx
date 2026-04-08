@@ -40,13 +40,13 @@ export function Services() {
       number: 2,
       title: "Structure the Experience",
       description: "Turn insights into clear flows and purposeful screens.",
-      image: "/assets/process/process1.svg",
+      image: "/assets/process/process2.svg",
     },
     {
       number: 3,
       title: "Design with Intent",
       description: "Build scalable interfaces driven by clarity and usability.",
-      image: "/assets/process/process1.svg",
+      image: "/assets/process/process3.svg",
     },
   ];
 
@@ -128,7 +128,7 @@ export function Services() {
                     viewport={{ once: true }}
                     className={`flex items-center gap-2 rounded-full h-[77px] border-[8px] min-w-[438px] border-[#f6f7f7] bg-white px-3 py-2 transition-transform duration-300 ease-out cursor-pointer hover:-rotate-4`}
                     animate={isActive ? { scale: 1.05, boxShadow: "0 8px 24px rgba(0,0,0,0.12)" } : { scale: 1, boxShadow: "0 0px 0px rgba(0,0,0,0)" }}
-                    whileHover={{ scale: 1.05 }}
+                    whileHover={{ scale: 1.0 }}
                     whileTap={{ scale: 0.98 }}
                   >
                     <motion.div 
@@ -168,7 +168,7 @@ export function Services() {
               <img
                 src={processSteps[activeStep].image}
                 alt={processSteps[activeStep].title}
-                className="object-cover h-full w-full rounded-lg bg-white"
+                className="object-cover h-full w-full rounded-lg"
               />
             </motion.div>
           </div>

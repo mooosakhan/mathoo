@@ -13,6 +13,12 @@ export function Footer() {
       whileInView={{ opacity: 1 }}
       viewport={{ once: true, margin: "-100px" }}
       transition={{ duration: 0.6 }}
+      style={{
+        backgroundImage: "url(/assets/bg.png)",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+      }}
     >
       {/* CTA Section */}
       <motion.div 

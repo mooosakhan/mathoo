@@ -15,7 +15,7 @@ export function CaseStudies() {
   ];
 
   return (
-    <motion.section 
+    <motion.section
       className="py-1 max-h-[1476px] max-w-[896px] mx-auto"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
@@ -23,7 +23,7 @@ export function CaseStudies() {
       transition={{ duration: 0.6 }}
     >
       <div className="mx-auto bg--600">
-        <motion.div 
+        <motion.div
           className="mb-16"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -36,107 +36,158 @@ export function CaseStudies() {
             description="Each project represents a unique challenge solved through thoughtful research, strategic design, and attention to detail."
           />
         </motion.div>
-        <motion.div 
+        <motion.div
           className="space-y-[24px]"
           variants={listContainer}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
         >
-          <motion.div 
-            className="relative overflow-hidden rounded-3xl w-full bg-- group"
+          {/* FIRST CARD */}
+          <motion.div
+            className="relative overflow-hidden rounded-3xl w-full group"
             variants={listItem}
-            whileHover={{ scale: 1.02 }}
-            transition={{ type: "spring", stiffness: 300 }}
           >
             <div className="rounded-[35px] border-[13px] w-full border-[#f6f7f7]">
               <img
                 src={caseStudies[0].image}
                 alt={caseStudies[0].name}
-                className="object-cover w-full"
+                className="object-cover w-full transition duration-500 group-hover:scale-105"
               />
             </div>
-            {/* Overlay button - appears on image hover */}
-            <motion.div 
-              className="absolute bottom-0 left-1/2 transform -translate-x-1/2 mb-8 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-              initial={{ y: 20, opacity: 0 }}
-              whileInView={{ y: 0, opacity: 1 }}
-              viewport={{ once: true }}
-            >
-              <motion.div 
-                className="w-[840px] h-[80px] flex p-3 justify-between rounded-full bg-white text-white font-semibold text-lg transition-colors duration-300"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <div className="flex gap-2 items-center justify-between">
-                  <div className="flex justify-center items-center w-[60px] h-[60px] rounded-full overflow-hidden bg-[#f6f7f7]">
+
+            <div className="absolute bottom-0 left-1/2 -translate-x-1/2 mb-6 opacity-0 translate-y-10 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+              <div className="w-[840px] h-[80px] flex p-3 justify-between rounded-full bg-white">
+                <div className="flex gap-2 items-center">
+                  <div className="w-[60px] h-[60px] rounded-full bg-[#f6f7f7] flex items-center justify-center">
                     <img
                       src="/assets/case-study/smit-logo.png"
-                      alt="Muneeb ur Rehman"
-                      className="w-[50px] h-[24px] object-cover rounded-full"
+                      className="w-[50px] h-[24px]"
                     />
                   </div>
-                  <div className="flex text-black flex-col">
-                    <p className="text--900">SMIT</p>
-                    <p className="text-[#7e7e7e] text-xs font-light">UI/UX Dsigner</p>
+                  <div className="flex flex-col text-black">
+                    <p>SMIT</p>
+                    <p className="text-xs text-gray-500 font-light">
+                      UI/UX Designer
+                    </p>
                   </div>
                 </div>
-                <motion.button 
-                  className="px-3 py-2 rounded-full bg-[#f6f7f7] text-black font-light cursor-pointer   text-sm transition-colors duration-300 hover:bg--700 w-[144px] h-[53px]"
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.95 }}
-                >
+
+                <button className="px-3 py-2 rounded-full bg-[#f6f7f7] text-sm w-[144px] hover:bg-gray-200">
                   View Case Study
-                </motion.button>
-              </motion.div>
-            </motion.div>
+                </button>
+              </div>
+            </div>
           </motion.div>
 
-          <motion.div 
-            className="flex items-center justify-between h-[400px] bg--50"
+          {/* SECOND ROW */}
+          <motion.div
+            className="flex items-center justify-between h-[400px]"
             variants={listItem}
           >
-            <motion.div 
-              className="relative overflow- rounded-3xl h-full max-w-[438px]"
-              whileHover={{ scale: 1.05 }}
-              transition={{ type: "spring", stiffness: 300 }}
-            >
-              <div className="rounded-[33px] border-[13px] border-[#f6f7f7]">
+            {/* CARD 2 */}
+            <div className="relative overflow-hidden rounded-3xl h-full max-w-[438px] group">
+              <div className="rounded-[33px] border-[13px] border-[#f6f7f7] h-full">
                 <img
                   src={caseStudies[1].image}
                   alt={caseStudies[1].name}
-                  className="object-cover rounded-xl"
+                  className="object-cover w-full h-full transition duration-500 group-hover:scale-105"
                 />
               </div>
-            </motion.div>
 
-            <motion.div 
-              className="relative overflow- rounded-3xl h-full max-w-[438px]"
-              whileHover={{ scale: 1.05 }}
-              transition={{ type: "spring", stiffness: 300 }}
-            >
-              <div className="rounded-[33px] border-[13px] border-[#f6f7f7]">
+              <div className="absolute bottom-0 w-full left-1/2 -translate-x-1/2 mb-6 mx-auto opacity-0 translate-y-10 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 flex items-center justify-center">
+                <div className="w-[90%] h-[80px] flex p-3 justify-between rounded-full bg-white">
+                  <div className="flex gap-2 items-center">
+                    <div className="w-[50px] h-[50px] rounded-full bg-[#f6f7f7] flex items-center justify-center">
+                      <img
+                        src="/assets/case-study/smit-logo.png"
+                        className="w-[40px] h-[24px]"
+                      />
+                    </div>
+                    <div className="flex flex-col text-black">
+                      <p>SMIT</p>
+                      <p className="text-xs text-gray-500 font-light">
+                        UI/UX Designer
+                      </p>
+                    </div>
+                  </div>
+
+                  <button className="px-3 py-2 rounded-full bg-[#f6f7f7] text-sm cursor-pointer font-medium w-[144px] hover:bg-gray-200">
+                    View Case Study
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            {/* CARD 3 */}
+            <div className="relative overflow-hidden rounded-3xl h-full max-w-[438px] group">
+              <div className="rounded-[33px] border-[13px] border-[#f6f7f7] h-full">
                 <img
                   src={caseStudies[2].image}
                   alt={caseStudies[2].name}
-                  className="object-contain"
+                  className="object-contain w-full h-full transition duration-500 group-hover:scale-105"
                 />
               </div>
-            </motion.div>
+
+              <div className="absolute bottom-0 w-full left-1/2 -translate-x-1/2 mb-6 mx-auto opacity-0 translate-y-10 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 flex items-center justify-center">
+                <div className="w-[90%] h-[80px] flex p-3 justify-between rounded-full bg-white">
+                  <div className="flex gap-2 items-center">
+                    <div className="w-[50px] h-[50px] rounded-full bg-[#f6f7f7] flex items-center justify-center">
+                      <img
+                        src="/assets/case-study/smit-logo.png"
+                        className="w-[40px] h-[24px]"
+                      />
+                    </div>
+                    <div className="flex flex-col text-black">
+                      <p>SMIT</p>
+                      <p className="text-xs text-gray-500 font-light">
+                        UI/UX Designer
+                      </p>
+                    </div>
+                  </div>
+
+                  <button className="px-3 py-2 rounded-full bg-[#f6f7f7] text-sm cursor-pointer font-medium w-[144px] hover:bg-gray-200">
+                    View Case Study
+                  </button>
+                </div>
+              </div>
+            </div>
           </motion.div>
 
-          <motion.div 
-            className=" overflow- rounded-3xl lg:h-[420px] "
+          {/* LAST CARD */}
+          <motion.div
+            className="relative overflow-hidden rounded-3xl lg:h-[420px] group"
             variants={listItem}
-            whileHover={{ scale: 1.02 }}
-            transition={{ type: "spring", stiffness: 300 }}
           >
             <div className="rounded-[35px] border-[13px] w-full border-[#f6f7f7]">
               <img
                 src={caseStudies[3].image}
                 alt={caseStudies[3].name}
-                className="object-cover w-full "
+                className="object-cover w-full transition duration-500 group-hover:scale-105"
               />
+            </div>
+
+            <div className="absolute bottom-0 left-1/2 -translate-x-1/2 mb-6 opacity-0 translate-y-10 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+              <div className="w-[840px] h-[80px] flex p-3 justify-between rounded-full bg-white">
+                <div className="flex gap-2 items-center">
+                  <div className="w-[60px] h-[60px] rounded-full bg-[#f6f7f7] flex items-center justify-center">
+                    <img
+                      src="/assets/case-study/smit-logo.png"
+                      className="w-[50px] h-[24px]"
+                    />
+                  </div>
+                  <div className="flex flex-col text-black">
+                    <p>SMIT</p>
+                    <p className="text-xs text-gray-500 font-light">
+                      UI/UX Designer
+                    </p>
+                  </div>
+                </div>
+
+                <button className="px-3 py-2 rounded-full bg-[#f6f7f7] text-sm w-[144px] hover:bg-gray-200">
+                  View Case Study
+                </button>
+              </div>
             </div>
           </motion.div>
         </motion.div>

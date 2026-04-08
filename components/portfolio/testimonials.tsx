@@ -42,7 +42,7 @@ export function Testimonials() {
 
   return (
     <motion.section 
-      className="bg-gray-50  max-w-[957px] mx-auto"
+      className="  max-w-[957px] mx-auto"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       viewport={{ once: true, margin: "-100px" }}

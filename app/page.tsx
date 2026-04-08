@@ -17,7 +17,29 @@ export const metadata: Metadata = {
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-[#F8F9FA] ">
+    <main className="min-h-screen bg-[#F8F9FA] relative">
+      {/* Left vertical line */}
+      <div
+        className="absolute left-57 top-0 bottom-0 w-[1px] pointer-events-none"
+        style={{
+          backgroundImage: "url(/assets/line.png)",
+          backgroundSize: "100% auto",
+          backgroundPosition: "center",
+          backgroundRepeat: "repeat-y",
+        }}
+      />
+      
+      {/* Right vertical line */}
+      <div
+        className="absolute right-57 top-0 bottom-0 w-[1px] pointer-events-none"
+        style={{
+          backgroundImage: "url(/assets/line.png)",
+          backgroundSize: "100% auto",
+          backgroundPosition: "center",
+          backgroundRepeat: "repeat-y",
+        }}
+      />
+
       <div
         className="relative "
         style={{
