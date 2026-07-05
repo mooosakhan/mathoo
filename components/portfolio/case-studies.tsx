@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { CustomButton } from "./book-a-call-button";
 import { SectionHeader } from "../reusable/section-header";
 import { listContainer, listItem } from "@/lib/motion-variants";
+import Link from "next/link";
 
 export function CaseStudies() {
   const caseStudies = [
@@ -37,7 +38,7 @@ export function CaseStudies() {
           />
         </motion.div>
         <motion.div
-          className="space-y-[24px]"
+          className="space-y-[24px] "
           variants={listContainer}
           initial="hidden"
           whileInView="visible"
@@ -57,7 +58,7 @@ export function CaseStudies() {
             </div>
 
             <div className="absolute bottom-0 left-1/2 -translate-x-1/2 mb-6 opacity-0 translate-y-10 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
-              <div className="w-[840px] h-[80px] flex p-3 justify-between rounded-full bg-white">
+              <div className="w-[840px] h-[80px] flex p-3 justify-between items-center rounded-full bg-white">
                 <div className="flex gap-2 items-center">
                   <div className="w-[60px] h-[60px] rounded-full bg-[#f6f7f7] flex items-center justify-center">
                     <img
@@ -72,10 +73,11 @@ export function CaseStudies() {
                     </p>
                   </div>
                 </div>
-
-                <button className="px-3 py-2 rounded-full bg-[#f6f7f7] text-sm w-[144px] hover:bg-gray-200">
-                  View Case Study
-                </button>
+                <Link href={"/case-study/student-portal"}>
+                  <button className="cursor-pointer p-3  rounded-full bg-[#f6f7f7] text-sm w-[144px] h-[53px] hover:bg-gray-200">
+                    View Case Study
+                  </button>
+                </Link>
               </div>
             </div>
           </motion.div>
@@ -96,25 +98,27 @@ export function CaseStudies() {
               </div>
 
               <div className="absolute bottom-0 w-full left-1/2 -translate-x-1/2 mb-6 mx-auto opacity-0 translate-y-10 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 flex items-center justify-center">
-                <div className="w-[90%] h-[80px] flex p-3 justify-between rounded-full bg-white">
+                <div className="w-[90%] h-[80px] flex p-3 items-center justify-between rounded-full bg-white">
                   <div className="flex gap-2 items-center">
                     <div className="w-[50px] h-[50px] rounded-full bg-[#f6f7f7] flex items-center justify-center">
                       <img
-                        src="/assets/case-study/smit-logo.png"
+                        src="/assets/case-study/cs4/sb-logo.png"
                         className="w-[40px] h-[24px]"
                       />
                     </div>
                     <div className="flex flex-col text-black">
-                      <p>SMIT</p>
+                      <p>Sindh Bank</p>
                       <p className="text-xs text-gray-500 font-light">
-                        UI/UX Designer
+                        App Design
                       </p>
                     </div>
                   </div>
 
-                  <button className="px-3 py-2 rounded-full bg-[#f6f7f7] text-sm cursor-pointer font-medium w-[144px] hover:bg-gray-200">
-                    View Case Study
-                  </button>
+                  <Link href={"/case-study/sindh-bank"}>
+                    <button className="p-3 rounded-full bg-[#f6f7f7] text-sm w-[144px] h-[53px] hover:bg-gray-200">
+                      View Case Study
+                    </button>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -130,25 +134,27 @@ export function CaseStudies() {
               </div>
 
               <div className="absolute bottom-0 w-full left-1/2 -translate-x-1/2 mb-6 mx-auto opacity-0 translate-y-10 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 flex items-center justify-center">
-                <div className="w-[90%] h-[80px] flex p-3 justify-between rounded-full bg-white">
+                <div className="w-[90%] h-[80px] items-center flex p-3 justify-between rounded-full bg-white">
                   <div className="flex gap-2 items-center">
                     <div className="w-[50px] h-[50px] rounded-full bg-[#f6f7f7] flex items-center justify-center">
                       <img
-                        src="/assets/case-study/smit-logo.png"
+                        src="/assets/case-study/cs2/sbca-logo.png"
                         className="w-[40px] h-[24px]"
                       />
                     </div>
                     <div className="flex flex-col text-black">
-                      <p>SMIT</p>
+                      <p>SBCA</p>
                       <p className="text-xs text-gray-500 font-light">
-                        UI/UX Designer
+                        Product Design
                       </p>
                     </div>
                   </div>
 
-                  <button className="px-3 py-2 rounded-full bg-[#f6f7f7] text-sm cursor-pointer font-medium w-[144px] hover:bg-gray-200">
-                    View Case Study
-                  </button>
+                  <Link href={"/case-study/sbca"}>
+                    <button className="p-3 rounded-full bg-[#f6f7f7] text-sm w-[144px] h-[53px] hover:bg-gray-200">
+                      View Case Study
+                    </button>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -168,25 +174,26 @@ export function CaseStudies() {
             </div>
 
             <div className="absolute bottom-0 left-1/2 -translate-x-1/2 mb-6 opacity-0 translate-y-10 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
-              <div className="w-[840px] h-[80px] flex p-3 justify-between rounded-full bg-white">
+              <div className="w-[840px] h-[80px] flex p-3 justify-between items-center rounded-full bg-white">
                 <div className="flex gap-2 items-center">
                   <div className="w-[60px] h-[60px] rounded-full bg-[#f6f7f7] flex items-center justify-center">
                     <img
-                      src="/assets/case-study/smit-logo.png"
-                      className="w-[50px] h-[24px]"
+                      src="/assets/case-study/cs3/saylani-alumni-logo.png"
                     />
                   </div>
                   <div className="flex flex-col text-black">
-                    <p>SMIT</p>
+                    <p>SMIT Alumni</p>
                     <p className="text-xs text-gray-500 font-light">
-                      UI/UX Designer
+                      Website Design
                     </p>
                   </div>
                 </div>
 
-                <button className="px-3 py-2 rounded-full bg-[#f6f7f7] text-sm w-[144px] hover:bg-gray-200">
-                  View Case Study
-                </button>
+                <Link href={"/case-study/saylani-alumni"}>
+                  <button className="p-3 rounded-full bg-[#f6f7f7] text-sm w-[144px] h-[53px] hover:bg-gray-200">
+                    View Case Study
+                  </button>
+                </Link>
               </div>
             </div>
           </motion.div>

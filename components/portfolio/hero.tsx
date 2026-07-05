@@ -3,13 +3,14 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { CustomButton } from "./book-a-call-button";
-import { fadeInUp, fadeInDown, staggerContainer, staggerItem } from "@/lib/motion-variants";
+import {  fadeInDown, staggerContainer, staggerItem } from "@/lib/motion-variants";
 
 export function Hero() {
   return (
     <section 
       className="relative w-full px-2 py-24  sm:px-3 sm:py-32 lg:px-4 lg:py-0 flex items-center justify-center"
     >
+      <div className="pointer-events-none absolute left-0 top-full -mt-20 h-20 w-full bg-gradient-to-b from-transparent to-[#F8F9FA]" />
       <motion.div 
         className="flex flex-col items-center p-0 gap-4"
         style={{

@@ -2,10 +2,18 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
+import { Header } from "@/components/portfolio/header";
+import { Footer } from "@/components/portfolio/footer";
+import localFont from "next/font/local"
+
 
 const _geist = Geist({ subsets: ["latin"] });
 const _geistMono = Geist_Mono({ subsets: ["latin"] });
-
+const switzer = localFont({
+   src: "./fonts/Switzer-Regular.woff2",
+  variable: "--font-switzer",
+  display: "swap",
+})
 export const metadata: Metadata = {
   metadataBase: new URL("https://muneeb.design"),
   title: "Muneeb Ur Rehman - UI/UX Designer | Product Design Expert",
@@ -79,7 +87,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className={switzer.variable}>
       <head>
         {/* JSON-LD Schema */}
         <script
@@ -102,8 +110,41 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className="font-sans antialiased">
+      <body className="font-sans antialiased bg-[#F8F9FA]">
+        <div
+        className=" absolute left-57 top-0 bottom-0 w-[1px] pointer-events-none"
+        style={{
+          backgroundImage: "url(/assets/line.png)",
+          backgroundSize: "100% auto",
+          backgroundPosition: "center",
+          backgroundRepeat: "repeat-y",
+        }}
+      />
+      <div
+        className="absolute right-57 top-0 bottom-0 w-[1px] pointer-events-none"
+        style={{
+          backgroundImage: "url(/assets/line.png)",
+          backgroundSize: "100% auto",
+          backgroundPosition: "center",
+          backgroundRepeat: "repeat-y",
+        }}
+      />
+      <div
+        className="relative "
+        style={{
+          backgroundImage: "url(/assets/hero-bg.png)",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+        }}
+      >
+        <div className="relative">
+
+        <Header />
+        </div>
+      </div>
         {children}
+        <Footer />
         <Analytics />
       </body>
     </html>

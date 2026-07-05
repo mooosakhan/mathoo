@@ -1,13 +1,20 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Button } from "@/components/ui/button";
 import { CustomButton } from "./book-a-call-button";
 import { fadeInUp, staggerContainer, staggerItem } from "@/lib/motion-variants";
+import { FormEvent, useState } from "react";
+import { Button } from "../ui/button";
 
 export function Footer() {
+  const [query, setQuery] = useState<string>("");
+  const handleQuery = (e: FormEvent) => {
+    e.preventDefault();
+    
+  };
+ 
   return (
-    <motion.section 
+    <motion.section
       className=" pt-16 sm:pt-10 overflow-hidden"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
@@ -21,7 +28,7 @@ export function Footer() {
       }}
     >
       {/* CTA Section */}
-      <motion.div 
+      <motion.div
         className="relative rounded-2xl text-center flex items-center justify-center flex-col gap-4 max-w-[896px] mx-auto"
         variants={staggerContainer}
         initial="initial"
@@ -30,7 +37,7 @@ export function Footer() {
       >
         {/* Sticky Note Decoration */}
 
-        <motion.div 
+        <motion.div
           className="mb-8 inline-block relative"
           variants={staggerItem}
           whileHover={{ scale: 1.05, rotate: 5 }}
@@ -39,17 +46,26 @@ export function Footer() {
           <img src="/assets/footer/chip-input.png" className="w- h-60" />
           <textarea
             spellCheck={false}
-            placeholder="Write Your Query Here"
+            placeholder="Write Your Query here +Contact details here"
             className="absolute h-40 inset-0 border-none -rotate-10 mt-9 underline-none outline-none bg-transparent px-8 text-[#635c3f] py-2 text-md  resize-none scrollbar-hide"
+            onChange={(e) => setQuery(e.target.value)}
+            value={query}
             style={{ fontFamily: "Caveat" }}
           />
+          {query.trim() && <Button
+            className="absolute  left-10 top-45  rounded-full bg-white text-[#7e7e7e] -rotate-10"
+            onClick={handleQuery}
+          >
+            send
+          </Button>}
         </motion.div>
 
-        <motion.h3 
+        <motion.h3
           className="mt-8 text-3xl font-medium text-[#a2a3a2] sm:text-4xl"
           variants={staggerItem}
         >
-          Let's <motion.span 
+          Let's{" "}
+          <motion.span
             className="text-black"
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -57,9 +73,9 @@ export function Footer() {
             transition={{ duration: 0.5 }}
           >
             Strengthen Your Product
-          </motion.span> and{" "}
-          <br className="hidden sm:inline" />{" "}
-          <motion.span 
+          </motion.span>{" "}
+          and <br className="hidden sm:inline" />{" "}
+          <motion.span
             className="text-black"
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -70,7 +86,7 @@ export function Footer() {
           </motion.span>
         </motion.h3>
 
-        <motion.div 
+        <motion.div
           className="mt-8 "
           variants={staggerItem}
           whileHover={{ scale: 1.05 }}
@@ -82,7 +98,7 @@ export function Footer() {
 
       {/* Muneeb Text */}
       {/* Muneeb Gradient Text */}
-      <motion.div 
+      <motion.div
         className="relative min-h-[130px] flex items-center justify-center"
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}

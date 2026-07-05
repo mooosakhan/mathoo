@@ -1,6 +1,28 @@
 // Framer Motion animation variants and configurations
 // Reusable across all components
 
+export const testimonialVariant = {
+    initial: {
+      opacity: 0,
+    },
+    hover: {
+      opacity: 1,
+      transition: {
+        duration: 0.45,
+        ease: [0.22, 1, 0.36, 1],
+        delay :0.1
+      },
+    },
+  };
+export  const Variant = {
+    initial: { y: 0 },
+    hover: { y: -150 },
+    transition: {
+        duration: 0.45,
+        ease: [0.22, 1, 0.36, 1],
+        delay :0.1
+      },
+  };
 export const fadeInUp = {
   initial: { opacity: 0, y: 30 },
   animate: { opacity: 1, y: 0 },

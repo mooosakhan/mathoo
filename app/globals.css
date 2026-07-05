@@ -11,8 +11,41 @@
   scrollbar-width: none;
 }
 
-@custom-variant dark (&:is(.dark *));
+@layer components {
+  .cs-card {
+    @apply relative mx-auto flex w-full max-w-5xl flex-col overflow-hidden rounded-2xl bg-white p-6 md:flex-row md:items-center md:justify-between md:p-10;
+  }
+  .persona-card{
+    @apply flex flex-col justify-center  items-center space-y-2 mt-10 w-full max-w-5xl mx-auto
+  }
 
+  .cs-half {
+    @apply w-full md:w-1/2 font-switzer;
+  }
+
+  .cs-paragraph {
+    @apply text-sm leading-relaxed sm:text-base md:text-lg font-switzer;
+  }
+
+  .cs-gallery-image {
+    @apply h-auto w-full rounded-xl object-cover shadow-md;
+  }
+
+  .cs-meta-title {
+    @apply text-sm font-semibold text-gray-500;
+  }
+
+  .cs-stack-image {
+    @apply absolute left-1/2 top-1/2 w-[180px] sm:w-[220px] md:w-[360px] lg:w-[500px];
+  }
+}
+@custom-variant dark (&:is(.dark *));
+@theme {
+  --font-switzer: var(--font-switzer);
+}
+@utility font-switzer {
+  font-family: var(--font-switzer);
+}
 :root {
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);

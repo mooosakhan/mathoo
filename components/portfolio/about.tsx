@@ -31,7 +31,7 @@ export function About() {
           whileInView="animate"
           viewport={{ once: true, margin: "-50px" }}
         >
-          <p className="text-lg leading-relaxed text-[#7b7c7c] sm:text-xl">
+          <p className="text-lg leading-relaxed text-[#7b7c7c] sm:text-xl md:text-xl">
             <motion.span variants={revealItem} className="inline">I design </motion.span>
             <motion.span variants={revealItem} className="inline text-[#282828]">user focused experiences</motion.span>
             <motion.span variants={revealItem} className="inline"> that </motion.span>
