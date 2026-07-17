@@ -118,7 +118,7 @@ export function Hero() {
           variants={staggerItem}
         >
           <motion.div
-            className="w-full sm:w-auto"
+            className="w-auto"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
@@ -126,7 +126,7 @@ export function Hero() {
           </motion.div>
 
           <motion.div
-            className="w-full sm:w-auto"
+            className="w-auto"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >

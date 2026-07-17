@@ -84,7 +84,7 @@ whitespace-nowrap"
         >
           <motion.div variants={listItem}>
             <Link
-              href="#instagram"
+              href="https://www.instagram.com/dezigner_01?igsh=MWg4anE5YXIxOTRlNA%3D%3D"
               aria-label="Instagram"
               className="inline-flex h-9 w-9 sm:h-9 sm:w-9 items-center justify-center rounded-lg bordertransition-all "
             >
@@ -128,7 +128,7 @@ whitespace-nowrap"
 
           <motion.div variants={listItem}>
             <Link
-              href="#twitter"
+              href="https://x.com/Dzigner_"
               aria-label="Twitter / X"
               className="inline-flex h-9 w-9 sm:h-9 sm:w-9 items-center justify-center text-gray-800 transition-colors hover:text-gray-900"
             >
@@ -155,7 +155,7 @@ whitespace-nowrap"
 
           <motion.div variants={listItem}>
             <Link
-              href="#linkedin"
+              href="https://www.linkedin.com/in/muneebdesign/"
               aria-label="LinkedIn"
               className="inline-flex h-9 w-9 sm:h-9 sm:w-9 items-center justify-center rounded-lg bordertransition-all "
             >

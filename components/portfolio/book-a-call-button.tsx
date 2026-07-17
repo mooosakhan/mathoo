@@ -1,6 +1,7 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 interface CustomButtonProps {
   text?: string;
@@ -12,6 +13,7 @@ export function CustomButton({ text = "Book a Call", variant = "dark" }: CustomB
   const isSecondary = variant === "secondary";
   
   return (
+    <Link href={"https://calendly.com/muneebraj7860/30min"}>
     <Button
       className={`flex flex-row justify-center items-center gap-2.5 h-[41px] text-sm font-medium rounded-[31px] px-[13px] py-[10px] w-auto cursor-pointer ${
         isDark 
@@ -40,5 +42,6 @@ export function CustomButton({ text = "Book a Call", variant = "dark" }: CustomB
     >
       {text}
     </Button>
+    </Link>
   );
 }
