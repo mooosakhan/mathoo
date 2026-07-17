@@ -17,7 +17,8 @@ export function CaseStudies() {
 
   return (
     <motion.section
-      className="py-1 max-h-[1476px] max-w-[896px] mx-auto"
+      // className="py-1 max-h-[1476px] max-w-[896px] mx-auto"
+      className="py-1 max-w-[896px] mx-auto"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       viewport={{ once: true, margin: "-100px" }}
@@ -45,6 +46,8 @@ export function CaseStudies() {
           viewport={{ once: true, margin: "-100px" }}
         >
           {/* FIRST CARD */}
+          <Link href={"/case-study/student-portal"}>
+          
           <motion.div
             className="relative overflow-hidden rounded-3xl w-full group"
             variants={listItem}
@@ -81,13 +84,14 @@ export function CaseStudies() {
               </div>
             </div>
           </motion.div>
-
+          </Link>
           {/* SECOND ROW */}
           <motion.div
-            className="flex items-center justify-between h-[400px]"
+            className="flex flex-col md:flex-row items-center justify-between gap-6 h-auto md:h-[400px]"
             variants={listItem}
           >
             {/* CARD 2 */}
+            <Link href={"/case-study/sindh-bank"}>
             <div className="relative overflow-hidden rounded-3xl h-full max-w-[438px] group">
               <div className="rounded-[33px] border-[13px] border-[#f6f7f7] h-full">
                 <img
@@ -122,8 +126,10 @@ export function CaseStudies() {
                 </div>
               </div>
             </div>
+            </Link>
 
             {/* CARD 3 */}
+            <Link href={"/case-study/sbca"}>
             <div className="relative overflow-hidden rounded-3xl h-full max-w-[438px] group">
               <div className="rounded-[33px] border-[13px] border-[#f6f7f7] h-full">
                 <img
@@ -158,9 +164,11 @@ export function CaseStudies() {
                 </div>
               </div>
             </div>
+            </Link>
           </motion.div>
 
           {/* LAST CARD */}
+          <Link href={"/case-study/saylani-alumni"} >
           <motion.div
             className="relative overflow-hidden rounded-3xl lg:h-[420px] group"
             variants={listItem}
@@ -177,9 +185,7 @@ export function CaseStudies() {
               <div className="w-[840px] h-[80px] flex p-3 justify-between items-center rounded-full bg-white">
                 <div className="flex gap-2 items-center">
                   <div className="w-[60px] h-[60px] rounded-full bg-[#f6f7f7] flex items-center justify-center">
-                    <img
-                      src="/assets/case-study/cs3/saylani-alumni-logo.png"
-                    />
+                    <img src="/assets/case-study/cs3/saylani-alumni-logo.png" />
                   </div>
                   <div className="flex flex-col text-black">
                     <p>SMIT Alumni</p>
@@ -197,6 +203,7 @@ export function CaseStudies() {
               </div>
             </div>
           </motion.div>
+          </Link>
         </motion.div>
       </div>
     </motion.section>

@@ -15,7 +15,7 @@ export function Footer() {
  
   return (
     <motion.section
-      className=" pt-16 sm:pt-10 overflow-hidden"
+      className=" pt-16 sm:pt-10 overflow-hidden mt-10"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       viewport={{ once: true, margin: "-100px" }}

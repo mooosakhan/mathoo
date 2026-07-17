@@ -112,16 +112,32 @@ export function Features() {
   ];
 
   return (
-    <motion.section 
-      className="bg-[#F8F9FA]mx-auto py-8 sm:py-5"
+    <motion.section
+      className="mx-auto bg-[#F8F9FA] py-8 sm:py-5"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       viewport={{ once: true, margin: "-100px" }}
       transition={{ duration: 0.6 }}
     >
-      <div className="mx-auto w-[860px] px-4 sm:px-6 lg:px-8 p-2 text-sm">
-        <motion.div 
-          className="grid grid-cols-1 ] h-[80px] gap-12 sm:grid-cols-3 border-[10px] bg-white border-[#F6F6F6] rounded-full px-4 "
+      <div className="mx-auto w-full max-w-[860px] px-4 sm:px-6 lg:px-8">
+        <motion.div
+          className="
+            grid
+            grid-cols-1
+            sm:grid-cols-2
+            lg:grid-cols-3
+            gap-5
+            lg:gap-12
+            bg-white
+            border-[10px]
+            border-[#F6F6F6]
+            rounded-[28px]
+            lg:rounded-full
+            p-5
+            lg:px-6
+            lg:py-4
+            lg:min-h-[80px]
+          "
           variants={listContainer}
           initial="hidden"
           whileInView="visible"
@@ -130,20 +146,21 @@ export function Features() {
           {features.map((feature, index) => (
             <motion.div
               key={index}
-              className="flex flex-row items-center gap-4 text-center"
+              className="flex items-center gap-4 "
               variants={listItem}
               whileHover={{ scale: 1.05 }}
               transition={{ type: "spring", stiffness: 300 }}
             >
-              <motion.div 
-                className="flex h-[32px] w-[32px] items-center justify-center rounded-full bg-gray-100 text-gray-900"
+              <motion.div
+                className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-gray-100 text-gray-900"
                 whileHover={{ scale: 1.2, rotate: 10 }}
                 transition={{ type: "spring", stiffness: 400 }}
               >
                 {feature.icon}
               </motion.div>
-              <div>
-                <h3 className="text-sm fon text-gray-900">{feature.title}</h3>
+
+              <div className="min-w-0">
+                <h3 className="text-sm text-gray-900">{feature.title}</h3>
               </div>
             </motion.div>
           ))}

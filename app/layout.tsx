@@ -4,16 +4,17 @@ import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 import { Header } from "@/components/portfolio/header";
 import { Footer } from "@/components/portfolio/footer";
-import localFont from "next/font/local"
-
+import localFont from "next/font/local";
 
 const _geist = Geist({ subsets: ["latin"] });
 const _geistMono = Geist_Mono({ subsets: ["latin"] });
+
 const switzer = localFont({
-   src: "./fonts/Switzer-Regular.woff2",
+  src: "./fonts/Switzer-Regular.woff2",
   variable: "--font-switzer",
   display: "swap",
-})
+});
+
 export const metadata: Metadata = {
   metadataBase: new URL("https://muneeb.design"),
   title: "Muneeb Ur Rehman - UI/UX Designer | Product Design Expert",
@@ -89,7 +90,6 @@ export default function RootLayout({
   return (
     <html lang="en" className={switzer.variable}>
       <head>
-        {/* JSON-LD Schema */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -110,41 +110,47 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className="font-sans antialiased bg-[#F8F9FA]">
-        <div
-        className=" absolute left-57 top-0 bottom-0 w-[1px] pointer-events-none"
-        style={{
-          backgroundImage: "url(/assets/line.png)",
-          backgroundSize: "100% auto",
-          backgroundPosition: "center",
-          backgroundRepeat: "repeat-y",
-        }}
-      />
-      <div
-        className="absolute right-57 top-0 bottom-0 w-[1px] pointer-events-none"
-        style={{
-          backgroundImage: "url(/assets/line.png)",
-          backgroundSize: "100% auto",
-          backgroundPosition: "center",
-          backgroundRepeat: "repeat-y",
-        }}
-      />
-      <div
-        className="relative "
-        style={{
-          backgroundImage: "url(/assets/hero-bg.png)",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          backgroundRepeat: "no-repeat",
-        }}
-      >
-        <div className="relative">
 
-        <Header />
+      <body className="relative overflow-x-clip bg-[#F8F9FA] font-sans antialiased">
+        {/* Left Vertical Line */}
+        <div
+          className="pointer-events-none absolute top-0 bottom-0 left-4 hidden md:block lg:left-20 xl:left-40 2xl:left-57 w-[1px]"
+          style={{
+            backgroundImage: "url(/assets/line.png)",
+            backgroundSize: "100% auto",
+            backgroundPosition: "center",
+            backgroundRepeat: "repeat-y",
+          }}
+        />
+
+        {/* Right Vertical Line */}
+        <div
+          className="pointer-events-none absolute top-0 bottom-0 right-4 hidden md:block lg:right-20 xl:right-40 2xl:right-57 w-[1px]"
+          style={{
+            backgroundImage: "url(/assets/line.png)",
+            backgroundSize: "100% auto",
+            backgroundPosition: "center",
+            backgroundRepeat: "repeat-y",
+          }}
+        />
+
+        {/* Header Background */}
+        <div
+          className="relative"
+          style={{
+            backgroundImage: "url(/assets/hero-bg.png)",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+          }}
+        >
+          <Header />
         </div>
-      </div>
+
         {children}
+
         <Footer />
+
         <Analytics />
       </body>
     </html>

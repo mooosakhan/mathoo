@@ -7,14 +7,20 @@ import { fadeInDown, listContainer, listItem } from "@/lib/motion-variants";
 
 export function Header() {
   return (
-    <motion.header 
-      className="w-full flex items-center justify-center bg-transparent  py-6"
+    <motion.header
+      className="w-full flex items-center justify-center bg-transparent py-4 sm:py-5 md:py-6 px-4"
       variants={fadeInDown}
       initial="initial"
       animate="animate"
     >
-      <motion.div 
-        className="mx-auto flex flex-row justify-center items-center border border-[5px] border-[#f6f7f7] bg-white gap-7 py-[10px]  px-[8px] rounded-[64px]"
+      <motion.div
+        className="mx-auto flex items-center justify-center bg-white border-[5px] border-[#f6f7f7] rounded-[64px]
+gap-2 sm:gap-3 md:gap-5 lg:gap-7
+py-2 sm:py-[10px]
+px-2 sm:px-3 
+max-w-max
+overflow-x-hidden
+whitespace-nowrap"
         initial={{ scale: 0.9, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
         transition={{ duration: 0.6, delay: 0.2 }}
@@ -28,7 +34,7 @@ export function Header() {
           <Link
             href="#home"
             aria-label="Home"
-            className="inline-flex h-10 w-10 items-center justify-center text-gray-800 transition-colors hover:text-gray-900 "
+            className="inline-flex h-9 w-9 sm:h-10 sm:w-10 items-center justify-center text-gray-800 transition-colors hover:text-gray-900"
           >
             <svg
               className="h-6 w-6"
@@ -60,8 +66,8 @@ export function Header() {
           </Link>
         </motion.div>
 
-        <motion.div 
-          className="h-6 w-px bg-gray-500 rounded-full"
+        <motion.div
+          className="h-5 sm:h-6 w-px bg-gray-500 rounded-full"
           initial={{ scaleY: 0 }}
           animate={{ scaleY: 1 }}
           transition={{ duration: 0.5, delay: 0.4 }}
@@ -70,8 +76,8 @@ export function Header() {
         {/* Divider */}
 
         {/* Social Icons */}
-        <motion.nav 
-          className="flex items-center gap-3"
+        <motion.nav
+          className="flex items-center gap-2 sm:gap-3"
           variants={listContainer}
           initial="hidden"
           animate="visible"
@@ -80,9 +86,10 @@ export function Header() {
             <Link
               href="#instagram"
               aria-label="Instagram"
-              className="inline-flex h-9 w-9 items-center justify-center rounded-lg bordertransition-all "
+              className="inline-flex h-9 w-9 sm:h-9 sm:w-9 items-center justify-center rounded-lg bordertransition-all "
             >
               <motion.svg
+                className="w-5 h-5 sm:w-6 sm:h-6"
                 width="24"
                 height="24"
                 viewBox="0 0 24 24"
@@ -123,9 +130,10 @@ export function Header() {
             <Link
               href="#twitter"
               aria-label="Twitter / X"
-              className="inline-flex h-9 w-9 items-center justify-center text-gray-800 transition-colors hover:text-gray-900"
+              className="inline-flex h-9 w-9 sm:h-9 sm:w-9 items-center justify-center text-gray-800 transition-colors hover:text-gray-900"
             >
               <motion.svg
+                className="w-5 h-5 sm:w-6 sm:h-6"
                 width="24"
                 height="24"
                 viewBox="0 0 24 24"
@@ -149,9 +157,10 @@ export function Header() {
             <Link
               href="#linkedin"
               aria-label="LinkedIn"
-              className="inline-flex h-9 w-9 items-center justify-center rounded-lg bordertransition-all "
+              className="inline-flex h-9 w-9 sm:h-9 sm:w-9 items-center justify-center rounded-lg bordertransition-all "
             >
               <motion.svg
+                className="w-5 h-5 sm:w-6 sm:h-6"
                 width="24"
                 height="24"
                 viewBox="0 0 24 24"
@@ -187,13 +196,14 @@ export function Header() {
 
         {/* CTA Button */}
         <motion.div
+          className="shrink-0"
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.6, delay: 0.6 }}
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
         >
-          <CustomButton />
+          <CustomButton  />
         </motion.div>
       </motion.div>
     </motion.header>

@@ -89,90 +89,117 @@ export function Services() {
         </div> */}
 
         {/* Process Section */}
-        <motion.div 
-          className="flex flex-col gap-16"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-        >
+        <motion.div
+  className="flex flex-col gap-16"
+  initial={{ opacity: 0 }}
+  whileInView={{ opacity: 1 }}
+  viewport={{ once: true }}
+  transition={{ duration: 0.6 }}
+>
+  <motion.div
+    initial={{ opacity: 0, y: 20 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true }}
+    transition={{ duration: 0.6 }}
+  >
+    <SectionHeader
+      chipText="Process"
+      heading="How Ideas Turn Into Structured Products"
+      description="A clear process that starts with understanding the system, then shaping flows, and finally crafting purposeful, scalable interfaces."
+    />
+  </motion.div>
+
+  <div className="flex flex-col lg:flex-row justify-between items-center w-full gap-8 lg:gap-0">
+    {/* Steps */}
+    <div className="space-y-4 w-full lg:min-w-[438px] lg:max-w-[438px] p-4 rounded-lg">
+      {processSteps.map((step, index) => {
+        const isActive = index === activeStep;
+
+        return (
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            key={step.number}
+            role="button"
+            tabIndex={0}
+            onMouseEnter={() => setActiveStep(index)}
+            onFocus={() => setActiveStep(index)}
+            layout
+            variants={listItem}
+            initial="hidden"
+            whileInView="visible"
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            className="flex items-center gap-2 rounded-full h-[77px] border-[8px] w-full lg:min-w-[438px] border-[#f6f7f7] bg-white px-3 py-2 transition-transform duration-300 ease-out cursor-pointer hover:-rotate-4"
+            animate={
+              isActive
+                ? {
+                    scale: 1.05,
+                    boxShadow: "0 8px 24px rgba(0,0,0,0.12)",
+                  }
+                : {
+                    scale: 1,
+                    boxShadow: "0 0px 0px rgba(0,0,0,0)",
+                  }
+            }
+            whileHover={{ scale: 1.0 }}
+            whileTap={{ scale: 0.98 }}
           >
-            <SectionHeader
-              chipText="Process"
-              heading="How Ideas Turn Into Structured Products"
-              description="A clear process that starts with understanding the system, then shaping flows, and finally crafting purposeful, scalable interfaces."
-            />
-          </motion.div>
-
-          <div className="flex justify-between items-center w-full bg--200 h-[275px] gap-">
-            {/* Steps */}
-            <div className="space-y-4 bg--500 min-w-[438px] p-4 rounded-lg">
-              {processSteps.map((step, index) => {
-                const isActive = index === activeStep;
-                return (
-                  <motion.div
-                    key={step.number}
-                    role="button"
-                    tabIndex={0}
-                    onMouseEnter={() => setActiveStep(index)}
-                    onFocus={() => setActiveStep(index)}
-                    layout
-                    variants={listItem}
-                    initial="hidden"
-                    whileInView="visible"
-                    viewport={{ once: true }}
-                    className={`flex items-center gap-2 rounded-full h-[77px] border-[8px] min-w-[438px] border-[#f6f7f7] bg-white px-3 py-2 transition-transform duration-300 ease-out cursor-pointer hover:-rotate-4`}
-                    animate={isActive ? { scale: 1.05, boxShadow: "0 8px 24px rgba(0,0,0,0.12)" } : { scale: 1, boxShadow: "0 0px 0px rgba(0,0,0,0)" }}
-                    whileHover={{ scale: 1.0 }}
-                    whileTap={{ scale: 0.98 }}
-                  >
-                    <motion.div 
-                      className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-gray-100 text-gray-900"
-                      animate={isActive ? { scale: 1.2, backgroundColor: "#000" } : { scale: 1, backgroundColor: "#f3f4f6" }}
-                      transition={{ type: "spring", stiffness: 300 }}
-                    >
-                      <motion.span 
-                        className={`text-xs font-semibold ${isActive ? "text-white" : "text-gray-900"}`}
-                        animate={isActive ? { color: "#fff" } : { color: "#111827" }}
-                      >
-                        {step.number}
-                      </motion.span>
-                    </motion.div>
-                    <div>
-                      <h4 className="text-sm text-gray-900 ">
-                        {step.title}
-                      </h4>
-                      <p className="text-xs font-light text-gray-600 sm:text-xs">
-                        {step.description}
-                      </p>
-                    </div>
-                  </motion.div>
-                );
-              })}
-            </div>
-
-            {/* Mockup Image */}
-            <motion.div 
-              className="max-h-[275px] overflow-visible"
-              key={activeStep}
-              initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: -20 }}
-              transition={{ duration: 0.4 }}
+            <motion.div
+              className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-gray-100 text-gray-900"
+              animate={
+                isActive
+                  ? {
+                      scale: 1.2,
+                      backgroundColor: "#000",
+                    }
+                  : {
+                      scale: 1,
+                      backgroundColor: "#f3f4f6",
+                    }
+              }
+              transition={{ type: "spring", stiffness: 300 }}
             >
-              <img
-                src={processSteps[activeStep].image}
-                alt={processSteps[activeStep].title}
-                className="object-cover h-full w-full rounded-lg"
-              />
+              <motion.span
+                className={`text-xs font-semibold ${
+                  isActive ? "text-white" : "text-gray-900"
+                }`}
+                animate={{
+                  color: isActive ? "#fff" : "#111827",
+                }}
+              >
+                {step.number}
+              </motion.span>
             </motion.div>
-          </div>
-        </motion.div>
+
+            <div>
+              <h4 className="text-sm text-gray-900">
+                {step.title}
+              </h4>
+
+              <p className="text-xs font-light text-gray-600 sm:text-xs">
+                {step.description}
+              </p>
+            </div>
+          </motion.div>
+        );
+      })}
+    </div>
+
+    {/* Mockup Image */}
+    <motion.div
+      className="w-full lg:w-auto max-h-[275px] overflow-visible flex justify-center"
+      key={activeStep}
+      initial={{ opacity: 0, x: 20 }}
+      animate={{ opacity: 1, x: 0 }}
+      exit={{ opacity: 0, x: -20 }}
+      transition={{ duration: 0.4 }}
+    >
+      <img
+        src={processSteps[activeStep].image}
+        alt={processSteps[activeStep].title}
+        className="object-cover w-full max-w-[420px] lg:w-auto lg:h-full rounded-lg"
+      />
+    </motion.div>
+  </div>
+</motion.div>
       </div>
     </motion.section>
   );
